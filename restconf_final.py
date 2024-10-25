@@ -123,7 +123,7 @@ def status():
         admin_status = response_json["ietf-interfaces:interface"]["admin-status"]
         oper_status = response_json["ietf-interfaces:interface"]["oper-status"]
         if admin_status == 'up' and oper_status == 'up':
-            return "Interface loopback 65070242 is enable"
+            return "Interface loopback 65070242 is enabled"
         elif admin_status == 'down' and oper_status == 'down':
             return "Interface loopback 65070242 is disabled"
     elif (resp.status_code == 404):

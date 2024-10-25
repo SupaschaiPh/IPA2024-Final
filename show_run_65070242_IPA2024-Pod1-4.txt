@@ -1,8 +1,8 @@
 Building configuration...
 
-Current configuration : 4951 bytes
+Current configuration : 5150 bytes
 !
-! Last configuration change at 12:22:03 UTC Fri Oct 25 2024 by NETCONF
+! Last configuration change at 12:41:59 UTC Fri Oct 25 2024 by NETCONF
 !
 version 16.9
 service timestamps debug datetime msec
@@ -151,25 +151,32 @@ interface Loopback65070178
  description Loopback Interface for 65070178
  ip address 172.30.178.1 255.255.255.0
 !
-interface Loopback65070193
- description My first RESTCONF loopback
- ip address 172.30.193.1 255.255.255.0
-!
 interface Loopback65070195
  description created loopback by RESTCONF
  ip address 172.30.195.1 255.255.255.0
 !
 interface Loopback65070197
- description Loopback Interface for 65070197
  ip address 172.30.197.1 255.255.255.0
- shutdown
 !
-interface Loopback65070211
- ip address 172.30.211.1 255.255.255.0
+interface Loopback65070203
+ description created loopback by RESTCONF
+ ip address 172.30.203.1 255.255.255.0
+!
+interface Loopback65070206
+ description Loopback Interface for 65070206
+ ip address 172.30.206.1 255.255.255.0
+!
+interface Loopback65070224
+ description Created by RESTCONF
+ ip address 172.30.224.1 255.255.255.0
 !
 interface Loopback65070236
- description no shutdown loopback
+ description creating loopback
  ip address 172.30.236.1 255.255.255.0
+!
+interface Loopback65070240
+ description My second RESTCONF loopback
+ ip address 172.30.240.1 255.255.255.0
 !
 interface GigabitEthernet1
  ip address 10.0.15.184 255.255.255.0
