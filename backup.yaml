@@ -15,4 +15,4 @@
     - name: SAVE OUTPUT TO ./backups/
       copy:
         content: "{{ config.stdout[0] }}"
-        dest: "show_run_65070242_IPA2024-Pod1-4.txt"
+        dest: "show_run_65070242_CSR1KV-Pod1-4.txt"
