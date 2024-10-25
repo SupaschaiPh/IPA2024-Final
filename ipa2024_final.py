@@ -1,13 +1,13 @@
 #######################################################################################
-# Yourname:
-# Your student ID:
-# Your GitHub Repo: 
+# Yourname: Supaschai Photichai
+# Your student ID: 65070242
+# Your GitHub Repo: https://github.com/SupaschaiPh/IPA2024-Final
 
 #######################################################################################
 # 1. Import libraries for API requests, JSON formatting, time, os, (restconf_final or netconf_final), netmiko_final, and ansible_final.
 
-import time,requests,os,json
-from requests_toolbelt import MultipartEncoder
+import time,requests,os,json , restconf_final , netmiko_final , ansible_final 
+from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 #######################################################################################
 # 2. Assign the Webex access token to the variable ACCESS_TOKEN using environment variables.
@@ -73,7 +73,6 @@ while True:
         print(command)
 
 # 5. Complete the logic for each command
-        import restconf_final
         if command == "create":
            responseMessage = restconf_final.create()    
         elif command == "delete":
@@ -85,9 +84,9 @@ while True:
         elif command == "status":
             responseMessage = restconf_final.status()
         elif command == "gigabit_status":
-            pass
+            responseMessage = netmiko_final.gigabit_status()
         elif command == "showrun":
-            pass
+            responseMessage = ansible_final.showrun()
         else:
             responseMessage = "Error: No command or unknown command"
         
@@ -103,21 +102,21 @@ while True:
         # Need to attach file if responseMessage is 'ok'; 
         # Read Send a Message with Attachments Local File Attachments
         # https://developer.webex.com/docs/basics for more detail
+        # https://developer.webex.com/docs/basics#message-attachments
 
-        if False and command == "showrun" and responseMessage == 'ok':
-            pass
-            filename = "<!!!REPLACEME with show run filename and path!!!>"
-            fileobject = "<!!!REPLACEME with open file!!!>"
-            filetype = "<!!!REPLACEME with Content-type of the file!!!>"
+        if command == "showrun" and responseMessage == 'ok':
+            filename = os.path.dirname(__file__)+"/show_run_65070242_IPA2024-Pod1-4.txt"
+            fileobject = open(filename, 'rb')
+            filetype = "text/plain"
             postData = {
-                "roomId":" <!!!REPLACEME!!!>",
+                "roomId": roomIdToGetMessages,
                 "text": "show running config",
-                #"files": (<!!!REPLACEME!!!>, <!!!REPLACEME!!!>, <!!!REPLACEME!!!>),
+                "files": (filename, fileobject,filetype),
             }
-            #postData = MultipartEncoder(<!!!REPLACEME!!!>)
+            postData = MultipartEncoder(postData)
             HTTPHeaders = {
-            #"Authorization": ACCESS_TOKEN,
-            #"Content-Type": <!!!REPLACEME with postData Content-Type!!!>,
+             "Authorization": ACCESS_TOKEN,
+             "Content-Type": postData.content_type,
             }
         # other commands only send text, or no attached file.
         else:

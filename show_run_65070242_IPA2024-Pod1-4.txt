@@ -1,0 +1,235 @@
+Building configuration...
+
+Current configuration : 4951 bytes
+!
+! Last configuration change at 12:22:03 UTC Fri Oct 25 2024 by NETCONF
+!
+version 16.9
+service timestamps debug datetime msec
+service timestamps log datetime msec
+platform qfp utilization monitor load 80
+no platform punt-keepalive disable-kernel-core
+platform console serial
+!
+hostname CSR1KV-Pod1-4
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+!
+!
+!
+!
+!
+!
+!
+ip name-server 8.8.8.8
+ip domain name npa.com
+!
+!
+!
+login on-success log
+!
+!
+!
+!
+!
+!
+!
+subscriber templating
+! 
+! 
+! 
+! 
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-2740816364
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-2740816364
+ revocation-check none
+ rsakeypair TP-self-signed-2740816364
+!
+!
+crypto pki certificate chain TP-self-signed-2740816364
+ certificate self-signed 01
+  30820330 30820218 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  31312F30 2D060355 04031326 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 32373430 38313633 3634301E 170D3234 30393033 30363531 
+  31335A17 0D333030 31303130 30303030 305A3031 312F302D 06035504 03132649 
+  4F532D53 656C662D 5369676E 65642D43 65727469 66696361 74652D32 37343038 
+  31363336 34308201 22300D06 092A8648 86F70D01 01010500 0382010F 00308201 
+  0A028201 0100A578 16E03342 9A2EB8AA 9AB34A0D 9C83C224 9ED30536 DA967E80 
+  53B5F5FD 8FEE49B9 70F30D5C F3FD8AD0 BA01E52B A4A88E1A 5F2BB7EB B8403FEF 
+  6CE79071 043DCBEB F7A1BBB4 0EDC4302 502B8B4B D1F52BF1 4CFFBFD5 DFFCC7FC 
+  0480D010 5969D4BE 34AD2B32 E5303E4B 606F7DBE B4BD9923 ADE18D92 45166223 
+  B669725C A17A417C 7F7C3D79 603A3045 DC0A1A1B 945DF172 47BEB7FA EE81EB79 
+  0702F82E 1D021EB7 8AF5A2F4 51FB86EA B8594CA7 B6C33790 CF2794B5 89A640D4 
+  5480011B B9A38B0D 8A5D6E7C EB77EECC 704D791B A4F68B99 0CD02692 592DDC94 
+  894FCF2B 226B4861 7C19EEAC A1AE55EE F92958AB DD96D5BE 89C57471 8E403D0C 
+  B267FB4C 070F0203 010001A3 53305130 0F060355 1D130101 FF040530 030101FF 
+  301F0603 551D2304 18301680 14DA0E12 0DAC5957 3CC37382 CFDF7539 7F5F8E2D 
+  5D301D06 03551D0E 04160414 DA0E120D AC59573C C37382CF DF75397F 5F8E2D5D 
+  300D0609 2A864886 F70D0101 05050003 82010100 3FA09E4B 0F68F0F9 408E3F3D 
+  357D5F65 25030AB5 C3E366C0 E0704026 C2A4E4A2 432B99C8 E73ABE9F 20C17F45 
+  3F070301 6B35ED48 1A7B1DA3 58D0FE54 A056A343 FFB9A98D 2EF9B294 0134DFEF 
+  EE16E5E1 A9AF14A8 1ADA1B4B 8E4FAB07 5D58219A CA8EB55F C3B516C4 B185A4EA 
+  697F6A65 AD4BAE7D B4A91419 289E6CBA 763F2538 18CD1F95 7C03743C BF0377FA 
+  7F5BBD43 DB261081 78A85D0F C0484A24 BBBB18ED 38C744F0 0C013999 7B7A0BA2 
+  194D7DA8 94B8C56D 84853FB3 1A1527D7 FC16597B 830E906E F4165A86 1141EE67 
+  13C79889 46FFBDCB 17C583C5 8937A5DD FA538BB7 2DE77AC1 3383963D 3ED18003 
+  534A0964 40F139B4 6A5955E8 473E8FF0 55DCAEB5
+  	quit
+!
+!
+!
+!
+!
+!
+!
+!
+license udi pid CSR1000V sn 9KZHCU6EZ7Y
+no license smart enable
+diagnostic bootup level minimal
+!
+spanning-tree extend system-id
+!
+netconf-yang
+!
+restconf
+!
+username admin privilege 15 password 0 cisco
+!
+redundancy
+!
+!
+!
+!
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
+! 
+!
+!
+interface Loopback65070104
+ description Loopback Interface for 65070104
+ ip address 172.30.104.1 255.255.255.0
+!
+interface Loopback65070142
+ description Loopback Interface for 65070142
+ ip address 172.30.142.1 255.255.255.0
+!
+interface Loopback65070168
+ description Loopback Interface for 65070168
+ ip address 172.30.168.1 255.255.255.0
+!
+interface Loopback65070174
+ description Loopback Interface for 65070174
+ ip address 172.30.174.1 255.255.255.0
+!
+interface Loopback65070178
+ description Loopback Interface for 65070178
+ ip address 172.30.178.1 255.255.255.0
+!
+interface Loopback65070193
+ description My first RESTCONF loopback
+ ip address 172.30.193.1 255.255.255.0
+!
+interface Loopback65070195
+ description created loopback by RESTCONF
+ ip address 172.30.195.1 255.255.255.0
+!
+interface Loopback65070197
+ description Loopback Interface for 65070197
+ ip address 172.30.197.1 255.255.255.0
+ shutdown
+!
+interface Loopback65070211
+ ip address 172.30.211.1 255.255.255.0
+!
+interface Loopback65070236
+ description no shutdown loopback
+ ip address 172.30.236.1 255.255.255.0
+!
+interface GigabitEthernet1
+ ip address 10.0.15.184 255.255.255.0
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet2
+ ip address dhcp
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet3
+ no ip address
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+interface GigabitEthernet4
+ no ip address
+ shutdown
+ negotiation auto
+ no mop enabled
+ no mop sysid
+!
+ip forward-protocol nd
+no ip http server
+ip http authentication local
+ip http secure-server
+ip http client source-interface GigabitEthernet1
+ip tftp source-interface GigabitEthernet1
+ip route 0.0.0.0 0.0.0.0 10.0.15.1
+!
+ip ssh version 2
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+line con 0
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input telnet ssh
+line vty 5 530
+ login local
+ transport input telnet ssh
+!
+!
+!
+!
+!
+!
+end

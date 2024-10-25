@@ -1,0 +1,1 @@
+IPA2024-Pod1-4 ansible_user=admin ansible_password=cisco auth_pass=cisco ansible_network_os=ios ansible_connection=network_cli  ansible_host=10.0.15.184
