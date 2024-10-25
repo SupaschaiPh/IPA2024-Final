@@ -19,7 +19,8 @@ ACCESS_TOKEN = "Bearer "+os.environ.get('ACCESS_TOKEN')
 
 # Defines a variable that will hold the roomId
 roomIdToGetMessages = (
-    "Y2lzY29zcGFyazovL3VybjpURUFNOnVzLXdlc3QtMl9yL1JPT00vZGNiYzE5ODAtOTA0Ni0xMWVmLTkxYTYtM2Q0MjJkY2EzYzlk"
+    #"Y2lzY29zcGFyazovL3VybjpURUFNOnVzLXdlc3QtMl9yL1JPT00vZGNiYzE5ODAtOTA0Ni0xMWVmLTkxYTYtM2Q0MjJkY2EzYzlk" Supas's Room
+    "Y2lzY29zcGFyazovL3VzL1JPT00vNTFmNTJiMjAtNWQwYi0xMWVmLWE5YTAtNzlkNTQ0ZjRkNGZi"
 )
 
 while True:
